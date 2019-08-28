@@ -2,7 +2,7 @@ package oconfig
 
 import (
 	"fmt"
-	"github.com/qinaiwei1314ai/xlog"
+	"github.com/qinwei1314ai/xlog"
 	"io/ioutil"
 	"reflect"
 	"strconv"
