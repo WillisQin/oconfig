@@ -2,7 +2,6 @@ package oconfig
 
 import (
 	"fmt"
-	"github.com/qinwei1314ai/xlog"
 	"io/ioutil"
 	"reflect"
 	"strconv"
@@ -152,7 +151,7 @@ func UnMarshalFile(filename string, result interface{}) (err error) {
 	//读取配置文件内容，调用UnMarshal函数
 	data, err := ioutil.ReadFile(filename)
 	if err != nil {
-		xlog.LogError("Read config file err: %v", err)
+		err = fmt.Errorf("Read config file err: %v", err)
 		return
 	}
 	return UnMarshal(data, result)
@@ -195,7 +194,7 @@ func Marshal(result interface{}) (data []byte, err error) {
 			}
 			subVField := vField.Field(j)
 			fieldStr := fmt.Sprintf("%s=%v\n", subTFieldName, subVField.Interface())
-			xlog.LogDebug("conf:%s", fieldStr)
+			fmt.Printf("conf:%s", fieldStr)
 
 			strSlice = append(strSlice, fieldStr)
 		}
