@@ -2,7 +2,7 @@ package oconfig
 
 import (
 	"fmt"
-	"go/xlog"
+	"github.com/qinaiwei1314ai/xlog"
 	"io/ioutil"
 	"reflect"
 	"strconv"
